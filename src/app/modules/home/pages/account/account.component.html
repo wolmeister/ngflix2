@@ -1,1 +1,26 @@
-<p>account works!</p>
+<div class="account-page">
+  <app-header></app-header>
+  <div class="container">
+    <h1 class="caption">Account</h1>
+    <div class="section-group">
+      <div class="section-group-label">Name</div>
+      <div class="section-group-value">{{ user?.name }}</div>
+    </div>
+    <div class="section-group">
+      <div class="section-group-label">Email</div>
+      <div class="section-group-value">{{ user?.email }}</div>
+    </div>
+    <div class="section-group">
+      <div class="section-group-label">Country</div>
+      <div class="section-group-value">{{ user?.country }}</div>
+    </div>
+    <div class="section-group">
+      <div class="section-group-label">Phone</div>
+      <div class="section-group-value">{{ user?.phone }}</div>
+    </div>
+    <div class="section-group">
+      <div class="section-group-label">Plan Details</div>
+      <div class="section-group-value">{{ user?.plan }}</div>
+    </div>
+  </div>
+</div>
