@@ -8,10 +8,11 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 const routes: Routes = [
   {
     path: '',
-    canActivate: [AuthGuardService],
     children: [
       {
         path: RoutesConfig.authentication.basePath,
+        canActivate: [AuthGuardService],
+        data: { isAuthPage: true },
         loadChildren: () =>
           import('./modules/authentication/authentication.module').then(
             (m) => m.AuthenticationModule
@@ -19,11 +20,15 @@ const routes: Routes = [
       },
       {
         path: RoutesConfig.home.basePath,
+        canActivate: [AuthGuardService],
+        data: { isPrivate: true },
         loadChildren: () =>
           import('./modules/home/home.module').then((m) => m.HomeModule),
       },
       {
         path: RoutesConfig.watch.basePath,
+        canActivate: [AuthGuardService],
+        data: { isPrivate: true },
         loadChildren: () =>
           import('./modules/watch/watch.module').then((m) => m.WatchModule),
       },
