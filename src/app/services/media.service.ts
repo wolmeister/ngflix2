@@ -95,9 +95,11 @@ export class MediaService {
     return Object.entries(countryMediasMap)
       .sort(([countryA], [countryB]) => countryA.localeCompare(countryB))
       .map(([country, countryMedias]) => {
+        const uniqueCountryMedias = Array.from(new Set(countryMedias));
+
         return {
           country,
-          medias: countryMedias
+          medias: uniqueCountryMedias
             .sort((mA, mB) => {
               const mediaCountryCountKeyA = `${country}.${mA.id}`;
               const mediaCountryCountKeyB = `${country}.${mB.id}`;
