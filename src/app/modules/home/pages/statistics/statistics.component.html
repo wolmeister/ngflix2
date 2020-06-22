@@ -1,1 +1,47 @@
-<p>statistics works!</p>
+<div class="statistics-page">
+  <app-header></app-header>
+  <div class="container">
+    <h1 class="caption">Statistics</h1>
+    <div class="section-group">
+      <div class="section-group-label">Users who watched the most</div>
+      <div class="section-group-content">
+        <ol>
+          <li *ngFor="let user of usersWhoMostWatched">
+            {{ user.name + " (" + userWatchCount[user.id] + " shows watched)" }}
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="section-group">
+      <div class="section-group-label">Top watched tags</div>
+      <div class="section-group-content">
+        <ol>
+          <li *ngFor="let item of topWatchedByTags">
+            {{ item.tag + " (" + item.medias.length + " shows watched)" }}
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="section-group">
+      <div class="section-group-label">
+        <span>Top watched by country</span>
+        <select class="country-select" [(ngModel)]="country">
+          >
+          <option
+            *ngFor="let item of topWatchedByCountries"
+            [value]="item.country"
+          >
+            {{ item.country }}
+          </option>
+        </select>
+      </div>
+      <div class="section-group-content">
+        <ol>
+          <li *ngFor="let media of getMediasByCountry(country)">
+            {{ media.value.title + " (" + media.count + " views)" }}
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>

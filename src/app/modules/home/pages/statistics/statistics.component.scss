@@ -1,0 +1,42 @@
+.statistics-page {
+  width: 100%;
+  min-height: 100%;
+  background-color: #f3f3f3;
+}
+
+.container {
+  width: 95%;
+  height: 100%;
+  padding: 98px 30px 30px 30px;
+  margin: 0 auto;
+}
+
+.caption {
+  color: #000000;
+}
+
+.section-group {
+  margin-top: 16px;
+  border-top: 1px solid #999999;
+}
+
+.section-group-label {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  color: #999999;
+  font-size: 22px;
+}
+
+.section-group-content {
+  margin-left: 40px;
+}
+
+li {
+  color: #000000;
+  font-size: 18px;
+}
+
+.country-select {
+  margin-left: 16px;
+}

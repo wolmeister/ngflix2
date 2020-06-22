@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { FeatherModule } from 'angular-feather';
 import {
   Play,
@@ -37,6 +38,7 @@ import { MediaInformationComponent } from './components/media-information/media-
   ],
   imports: [
     CommonModule,
+    FormsModule,
     HomeRoutingModule,
     FeatherModule.pick({
       Play,
