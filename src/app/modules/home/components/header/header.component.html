@@ -1,0 +1,49 @@
+<div class="header" [class.header--transparent]="transparent">
+  <a [routerLink]="'/'" class="logo-link">
+    <img class="logo" src="assets/logo.svg" />
+  </a>
+  <div class="navigation-tabs">
+    <a
+      routerLink="/"
+      routerLinkActive="navigation-tab--active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="navigation-tab"
+      >Home</a
+    >
+    <a
+      routerLink="/shows"
+      routerLinkActive="navigation-tab--active"
+      class="navigation-tab"
+      >TV Shows</a
+    >
+    <a
+      routerLink="/movies"
+      routerLinkActive="navigation-tab--active"
+      class="navigation-tab"
+      >Movies</a
+    >
+    <a
+      routerLink="/latest"
+      routerLinkActive="navigation-tab--active"
+      class="navigation-tab"
+      >Latest</a
+    >
+    <a
+      routerLink="/list"
+      routerLinkActive="navigation-tab--active"
+      class="navigation-tab"
+      >My List</a
+    >
+  </div>
+  <div class="profile-container">
+    <img src="assets/profile.png" class="profile-image" />
+    <div class="profile-caret"></div>
+    <div class="profile-menu">
+      <div routerLink="/account" class="profile-menu-item">Account</div>
+      <div routerLink="/statistics" class="profile-menu-item">Statistics</div>
+      <div class="profile-menu-item" (click)="handleLogout()">
+        Sign out of Netflix
+      </div>
+    </div>
+  </div>
+</div>
