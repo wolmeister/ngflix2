@@ -1,0 +1,62 @@
+.watch-page {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.back-link {
+  color: #ffffff;
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.back-icon-wrapper {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.3s all ease;
+
+  &--visible,
+  &:hover {
+    opacity: 1;
+  }
+
+  &::after {
+    content: "Back to Browse";
+    position: absolute;
+    top: 50%;
+    width: 150px;
+    padding-left: 15px;
+    transform: translateY(-50%);
+    transition: 0.2s all ease;
+    font-size: 0;
+  }
+
+  &:hover:after {
+    font-size: 21px;
+  }
+}
+
+.back-icon {
+  width: 50px;
+  height: 50px;
+
+  transition: 0.3s all ease;
+
+  .back-icon-wrapper:hover & {
+    transform: scale(1.2);
+  }
+}
+
+.plyr {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

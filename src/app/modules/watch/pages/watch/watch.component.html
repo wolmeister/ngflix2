@@ -1,1 +1,21 @@
-<p>watch works!</p>
+<div class="watch-page">
+  <a class="back-link" routerLink="/">
+    <div
+      class="back-icon-wrapper"
+      [class.back-icon-wrapper--visible]="showBackIcon"
+    >
+      <feather-icon name="arrow-left" class="back-icon"></feather-icon>
+    </div>
+  </a>
+  <plyr
+    class="plyr"
+    [plyrOptions]="plyrOptions"
+    [plyrSources]="plyrSources"
+    (plyrInit)="player = $event"
+    (plyrLoadedData)="loadedData()"
+    (plyrControlsShown)="controlsShown()"
+    (plyrControlsHidden)="controlsHidden()"
+    (plyrTimeUpdate)="timeUpdate()"
+    (plyrEnded)="ended()"
+  ></plyr>
+</div>

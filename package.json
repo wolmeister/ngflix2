@@ -22,6 +22,8 @@
     "@ngrx/effects": "^9.2.0",
     "@ngrx/store": "^9.2.0",
     "angular-feather": "^6.0.10",
+    "ngx-plyr": "^4.0.0",
+    "plyr": "^3.6.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
