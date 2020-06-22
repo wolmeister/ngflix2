@@ -25,4 +25,12 @@ describe('AccountComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('#ngOnInit() should subscribe to the store', () => {
+    spyOn(component, 'subscribeToStore');
+
+    component.ngOnInit();
+
+    expect(component.subscribeToStore).toHaveBeenCalled();
+  });
 });

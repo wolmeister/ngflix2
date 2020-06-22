@@ -15,6 +15,7 @@ describe('MediaInformationComponent', () => {
     duration: '1h',
     tags: ['tag'],
   };
+
   let component: MediaInformationComponent;
   let fixture: ComponentFixture<MediaInformationComponent>;
 
@@ -33,5 +34,23 @@ describe('MediaInformationComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('#handlePlay() should emit playItem with the item', () => {
+    spyOn(component.playItem, 'emit');
+
+    component.handlePlay();
+
+    expect(component.playItem.emit).toHaveBeenCalled();
+    expect(component.playItem.emit).toHaveBeenCalledWith(component.item);
+  });
+
+  it('#handleClose() should emit closeItem with the item', () => {
+    spyOn(component.closeItem, 'emit');
+
+    component.handleClose();
+
+    expect(component.closeItem.emit).toHaveBeenCalled();
+    expect(component.closeItem.emit).toHaveBeenCalledWith(component.item);
   });
 });

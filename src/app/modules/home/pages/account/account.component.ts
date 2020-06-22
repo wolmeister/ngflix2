@@ -21,6 +21,10 @@ export class AccountComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.subscribeToStore();
+  }
+
+  subscribeToStore() {
     this.store
       .select((state) => state.auth.user)
       .subscribe((user) => {

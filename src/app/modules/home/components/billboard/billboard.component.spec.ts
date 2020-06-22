@@ -31,4 +31,13 @@ describe('BillboardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('#handlePlay() should emit playItem with the billboard', () => {
+    spyOn(component.playItem, 'emit');
+
+    component.handlePlay();
+
+    expect(component.playItem.emit).toHaveBeenCalled();
+    expect(component.playItem.emit).toHaveBeenCalledWith(component.billboard);
+  });
 });

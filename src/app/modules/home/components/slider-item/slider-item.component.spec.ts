@@ -35,4 +35,22 @@ describe('SliderItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('#handlePlayClick() should emit playclick with the item', () => {
+    spyOn(component.playclick, 'emit');
+
+    component.handlePlayClick();
+
+    expect(component.playclick.emit).toHaveBeenCalled();
+    expect(component.playclick.emit).toHaveBeenCalledWith(component.item);
+  });
+
+  it('#handleInfoClick() should emit infoclick with the item', () => {
+    spyOn(component.infoclick, 'emit');
+
+    component.handleInfoClick();
+
+    expect(component.infoclick.emit).toHaveBeenCalled();
+    expect(component.infoclick.emit).toHaveBeenCalledWith(component.item);
+  });
 });

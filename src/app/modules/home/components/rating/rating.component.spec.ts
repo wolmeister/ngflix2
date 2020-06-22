@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { RatingComponent } from './rating.component';
 
@@ -8,9 +9,8 @@ describe('RatingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RatingComponent ]
-    })
-    .compileComponents();
+      declarations: [RatingComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +21,14 @@ describe('RatingComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render the rating', () => {
+    component.rating = 18;
+    fixture.detectChanges();
+
+    const el: HTMLElement = fixture.nativeElement;
+
+    expect(el.innerText).toContain(String(18));
   });
 });
