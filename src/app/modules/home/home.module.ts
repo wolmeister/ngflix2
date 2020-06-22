@@ -9,6 +9,7 @@ import { AccountComponent } from './pages/account/account.component';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BillboardComponent } from './components/billboard/billboard.component';
+import { RatingComponent } from './components/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { BillboardComponent } from './components/billboard/billboard.component';
     StatisticsComponent,
     HeaderComponent,
     BillboardComponent,
+    RatingComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, FeatherModule.pick({ Play })],
 })
