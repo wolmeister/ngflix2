@@ -10,6 +10,11 @@ import { User } from '../../../../models/user';
 import { getUrl } from '../../../../utils/route.utils';
 import { RoutesConfig } from '../../../../configs/routes.config';
 
+type PlyrType = {
+  currentTime: number;
+  play(): void;
+};
+
 @Component({
   selector: 'app-watch',
   templateUrl: './watch.component.html',
@@ -29,7 +34,7 @@ export class WatchComponent implements OnInit {
     ],
   };
   plyrSources = [];
-  player: Plyr;
+  player: PlyrType;
   user: User;
   media: Media;
   showBackIcon = false;
