@@ -1,0 +1,14 @@
+<div class="billboard">
+  <img [src]="billboard.background" class="background" />
+  <div class="informations-wrapper">
+    <div class="informations">
+      <img [src]="billboard.title" class="title" />
+      <div class="supplemental">{{ billboard.supplemental }}</div>
+      <div class="synopsis">{{ billboard.synopsis }}</div>
+      <button (click)="handlePlay()" class="play-button">
+        <i-feather name="play" class="play-button-icon"></i-feather>
+        <span>Play</span>
+      </button>
+    </div>
+  </div>
+</div>
