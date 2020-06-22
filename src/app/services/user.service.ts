@@ -10,6 +10,10 @@ import { users } from './__data__/users';
 export class UserService {
   constructor(private mediaProgressService: MediaProgressService) {}
 
+  getUsers(): User[] {
+    return users;
+  }
+
   getUser(idOrEmail: number | string): User {
     if (typeof idOrEmail === 'number') {
       return users.find((u) => u.id === idOrEmail) || null;
