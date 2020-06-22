@@ -93,18 +93,27 @@ export class MediaService {
       mediaCountryCount[mediaCountryCountKey] += 1;
     });
     return Object.entries(countryMediasMap)
-      .sort(([, mediasA], [, mediasB]) => mediasB.length - mediasA.length)
-      .slice(0, 5)
+      .sort(([countryA], [countryB]) => countryA.localeCompare(countryB))
       .map(([country, countryMedias]) => {
         return {
           country,
-          medias: countryMedias.map((m) => {
-            const mediaCountryCountKey = `${country}.${m.id}`;
-            return {
-              value: m,
-              count: mediaCountryCount[mediaCountryCountKey],
-            };
-          }),
+          medias: countryMedias
+            .sort((mA, mB) => {
+              const mediaCountryCountKeyA = `${country}.${mA.id}`;
+              const mediaCountryCountKeyB = `${country}.${mB.id}`;
+              return (
+                mediaCountryCount[mediaCountryCountKeyB] -
+                mediaCountryCount[mediaCountryCountKeyA]
+              );
+            })
+            .slice(0, 5)
+            .map((m) => {
+              const mediaCountryCountKey = `${country}.${m.id}`;
+              return {
+                value: m,
+                count: mediaCountryCount[mediaCountryCountKey],
+              };
+            }),
         };
       });
   }
