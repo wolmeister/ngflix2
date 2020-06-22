@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  dev_frontend:
+    container_name: ngflix2-dev_frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ".:/app"
+      - "/app/node_modules"
+    ports:
+      - "4200:4200"
