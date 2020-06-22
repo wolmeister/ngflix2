@@ -32,7 +32,6 @@ describe('StatisticsComponent', () => {
     spyOn(mediaService, 'getTopMediasByTags');
 
     component.ngOnInit();
-    fixture.detectChanges();
 
     expect(mediaService.getTopMediasByTags).toHaveBeenCalled();
   });
@@ -41,7 +40,6 @@ describe('StatisticsComponent', () => {
     spyOn(mediaService, 'getTopMediasByCountries').and.returnValue([]);
 
     component.ngOnInit();
-    fixture.detectChanges();
 
     expect(mediaService.getTopMediasByCountries).toHaveBeenCalled();
   });
@@ -53,7 +51,6 @@ describe('StatisticsComponent', () => {
     ]);
 
     component.ngOnInit();
-    fixture.detectChanges();
 
     expect(component.country).toBe('a');
   });
@@ -62,7 +59,6 @@ describe('StatisticsComponent', () => {
     spyOn(userService, 'getUsersWhoWatchedTheMost').and.returnValue([]);
 
     component.ngOnInit();
-    fixture.detectChanges();
 
     expect(userService.getUsersWhoWatchedTheMost).toHaveBeenCalled();
   });
