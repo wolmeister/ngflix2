@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div class="login-page">
+  <div class="login-header">
+    <img class="login-header-logo" src="assets/logo.svg" />
+  </div>
+  <div class="login-body">
+    <h1>Sign In</h1>
+    <form (ngSubmit)="onSubmit()" class="login-form">
+      <span *ngIf="!!error" class="login-error">{{ error }}</span>
+      <app-input [(text)]="email" placeholder="Email"></app-input>
+      <app-input
+        [(text)]="password"
+        placeholder="Password"
+        type="password"
+      ></app-input>
+      <button class="login-button">Sign in</button>
+    </form>
+  </div>
+  <div class="login-background-wrapper">
+    <img src="assets/login-background.jpg" />
+  </div>
+</div>

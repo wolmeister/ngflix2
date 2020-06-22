@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <input
+    [type]="type"
+    class="input"
+    [(ngModel)]="text"
+    (ngModelChange)="textChange.emit(text)"
+  />
+  <label class="placeholder" [class.placeholder--text]="!!text">
+    {{ placeholder }}
+  </label>
+</div>
