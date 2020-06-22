@@ -16,9 +16,11 @@ import { AccountComponent } from './pages/account/account.component';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BillboardComponent } from './components/billboard/billboard.component';
+import { BrowserSliderComponent } from './components/browser-slider/browser-slider.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { SliderItemComponent } from './components/slider-item/slider-item.component';
 import { RatingComponent } from './components/rating/rating.component';
+import { MediaInformationComponent } from './components/media-information/media-information.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,11 @@ import { RatingComponent } from './components/rating/rating.component';
     StatisticsComponent,
     HeaderComponent,
     BillboardComponent,
+    BrowserSliderComponent,
     SliderComponent,
     SliderItemComponent,
     RatingComponent,
+    MediaInformationComponent,
   ],
   imports: [
     CommonModule,

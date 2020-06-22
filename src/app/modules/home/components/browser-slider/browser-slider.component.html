@@ -1,0 +1,16 @@
+<div class="browser-slider">
+  <span class="caption" [class.caption--relative]="relativeCaption">
+    {{ caption }}
+  </span>
+  <app-slider
+    [items]="items"
+    (playItem)="handlePlay($event)"
+    (infoItem)="handleInfo($event)"
+  ></app-slider>
+  <app-media-information
+    *ngIf="!!activeItem"
+    [item]="activeItem"
+    (playItem)="handlePlay($event)"
+    (closeItem)="handleClose()"
+  ></app-media-information>
+</div>

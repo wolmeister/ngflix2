@@ -1,0 +1,24 @@
+<div class="media-information">
+  <div class="background">
+    <div
+      class="background-image"
+      [ngStyle]="{ 'background-image': 'url(' + item.art + ')' }"
+    ></div>
+    <div class="background-shadow"></div>
+  </div>
+  <button class="close-button" (click)="handleClose()">
+    <feather-icon class="close-button-icon" name="x"></feather-icon>
+  </button>
+  <div class="informations">
+    <img [src]="item.titleArt" class="title-logo" />
+    <div class="informations-row">
+      <app-rating [rating]="item.rating"></app-rating>
+      <span>{{ item.duration }}</span>
+    </div>
+    <div class="synopsis">{{ item.synopsis }}</div>
+    <button class="play-button" (click)="handlePlay()">
+      <feather-icon class="play-button-icon" name="play"></feather-icon>
+      <span>Play</span>
+    </button>
+  </div>
+</div>

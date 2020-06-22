@@ -1,0 +1,17 @@
+.browser-slider {
+  margin: 3vw 0;
+}
+
+.caption {
+  display: block;
+  margin-left: 4%;
+  margin-bottom: 5px;
+  font-size: 1.4vw;
+  color: #ffffff;
+  font-weight: bold;
+  user-select: none;
+
+  &--relative {
+    position: relative;
+  }
+}
