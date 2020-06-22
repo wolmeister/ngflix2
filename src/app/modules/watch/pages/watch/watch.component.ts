@@ -112,6 +112,10 @@ export class WatchComponent implements OnInit {
     );
     // will never be null
     if (mp) {
+      if (!mp.firstFinishedAt) {
+        mp.firstFinishedAt = new Date();
+      }
+
       mp.finished = true;
       this.mediaProgressService.saveMediaProgress(mp);
     }

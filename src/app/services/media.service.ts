@@ -25,4 +25,13 @@ export class MediaService {
       .filter((mp) => !mp.finished);
     return progresses.map((mp) => this.getMedia(mp.mediaId));
   }
+
+  getLastWatchedMedias(user: User): Media[] {
+    const progresses = this.mediaProgressService
+      .getMediaProgresses(user)
+      .filter((mp) => !!mp.firstFinishedAt)
+      .sort((a, b) => b.firstFinishedAt.getTime() - a.firstFinishedAt.getTime())
+      .slice(0, 5);
+    return progresses.map((mp) => this.getMedia(mp.mediaId));
+  }
 }

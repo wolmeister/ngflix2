@@ -15,6 +15,13 @@ export class MediaProgressService {
     let currents: MediaProgress[] = [];
     if (currentsString) {
       currents = JSON.parse(currentsString);
+      currents = currents.map((mp) => ({
+        ...mp,
+        updatedAt: new Date(mp.updatedAt),
+        firstFinishedAt: mp.firstFinishedAt
+          ? new Date(mp.firstFinishedAt)
+          : null,
+      }));
     }
     if (user) {
       currents = currents.filter((mp) => mp.userId === user.id);
@@ -36,6 +43,7 @@ export class MediaProgressService {
           mp.mediaId === mediaProgress.mediaId
         )
     );
+    mediaProgress.updatedAt = new Date();
     currents.push(mediaProgress);
     localStorage.setItem(this.key, JSON.stringify(currents));
   }

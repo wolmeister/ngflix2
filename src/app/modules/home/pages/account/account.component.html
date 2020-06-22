@@ -22,5 +22,13 @@
       <div class="section-group-label">Plan Details</div>
       <div class="section-group-value">{{ user?.plan }}</div>
     </div>
+    <div class="section-group" *ngIf="lastWatchedMedias.length">
+      <div class="section-group-label">Last watched</div>
+      <div class="section-group-values">
+        <div class="tag" *ngFor="let media of lastWatchedMedias">
+          <div class="section-group-value">{{ media.title }}</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
