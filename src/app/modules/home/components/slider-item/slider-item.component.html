@@ -1,0 +1,21 @@
+<div class="slider-item">
+  <img [src]="item.art" class="art" />
+  <div class="details" *ngIf="hover">
+    <div class="play-area" (click)="handlePlayClick()">
+      <feather-icon class="play-icon" name="play-circle"></feather-icon>
+      <span class="title">{{ item.title }}</span>
+      <div class="row">
+        <app-rating [rating]="item.rating"></app-rating>
+        <span class="duration">{{ item.duration }}</span>
+      </div>
+      <div class="tags">
+        <div class="tag" *ngFor="let tag of item.tags">
+          {{ tag }}
+        </div>
+      </div>
+    </div>
+    <div class="more-info-area" (click)="handleInfoClick()">
+      <feather-icon class="more-info-icon" name="chevron-down"></feather-icon>
+    </div>
+  </div>
+</div>

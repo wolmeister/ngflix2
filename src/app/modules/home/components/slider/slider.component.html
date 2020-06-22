@@ -1,0 +1,32 @@
+<div class="slider">
+  <div
+    class="handle handle--previous"
+    [class.handle--hidden]="!hasPrevious()"
+    (click)="handlePrevious()"
+  >
+    <feather-icon class="handle-icon" name="chevron-left"></feather-icon>
+  </div>
+  <div
+    class="handle handle--next"
+    [class.handle--hidden]="!hasNext()"
+    (click)="handleNext()"
+  >
+    <feather-icon class="handle-icon" name="chevron-right"></feather-icon>
+  </div>
+  <div class="slides" [style.transform]="'translateX(' + translateX + '%)'">
+    <div
+      class="slide"
+      *ngFor="let item of items; index as i"
+      [ngStyle]="{ transform: getSlideTranform(i) }"
+      (mouseenter)="handleMouseEnter(i)"
+      (mouseleave)="handleMouseLeave()"
+    >
+      <app-slider-item
+        [item]="item"
+        [hover]="hoverIndex === i"
+        (playclick)="handlePlayClick(item)"
+        (infoclick)="handleInfoClick(item)"
+      ></app-slider-item>
+    </div>
+  </div>
+</div>
