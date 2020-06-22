@@ -1,1 +1,36 @@
-<p>home works!</p>
+<div class="home-page">
+  <app-header [transparent]="transparent"></app-header>
+  <app-billboard
+    [billboard]="billboard"
+    (playItem)="handlePlay($event.mediaId)"
+  ></app-billboard>
+  <div class="slides">
+    <app-browser-slider
+      caption="Trending Now"
+      [items]="trendingMedias"
+      [relativeCaption]="true"
+      (playItem)="handlePlay($event.id)"
+    ></app-browser-slider>
+    <app-browser-slider
+      *ngIf="watchingMedias.length"
+      caption="Continue Watching"
+      [items]="watchingMedias"
+      (playItem)="handlePlay($event.id)"
+    ></app-browser-slider>
+    <app-browser-slider
+      caption="Watch It Again"
+      [items]="watchAgainMedias"
+      (playItem)="handlePlay($event.id)"
+    ></app-browser-slider>
+    <app-browser-slider
+      caption="Popular on Netflix"
+      [items]="popularMedias"
+      (playItem)="handlePlay($event.id)"
+    ></app-browser-slider>
+    <app-browser-slider
+      caption="New Releases"
+      [items]="newMedias"
+      (playItem)="handlePlay($event.id)"
+    ></app-browser-slider>
+  </div>
+</div>
