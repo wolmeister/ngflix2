@@ -25,8 +25,11 @@
     <div class="section-group" *ngIf="lastWatchedMedias.length">
       <div class="section-group-label">Last watched</div>
       <div class="section-group-values">
-        <div class="tag" *ngFor="let media of lastWatchedMedias">
-          <div class="section-group-value">{{ media.title }}</div>
+        <div
+          class="section-group-value"
+          *ngFor="let media of lastWatchedMedias"
+        >
+          {{ media.title }}
         </div>
       </div>
     </div>
